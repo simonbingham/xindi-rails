@@ -1,0 +1,15 @@
+<h1><%= @page_title %></h1>
+
+<% if !@search_results.nil? && @search_results.length > 0 %>
+  <div class="alert alert-success"><%= I18n.t('search_results', count: @search_results.length) %> matching the search term "<%= params['search_term'] %>".</div>
+
+  <% @search_results.each do |item| %>
+    <h2><%= get_search_result_link(item.class.name, item.title, item.slug) %></h2>
+
+    <p><%= highlight(truncate(item.content.gsub(/<("[^"]*"|'[^']*'|[^'">])*>/, ' '), :length => 500), @words) %></p>
+  <% end %>
+<% elsif !@search_results.nil? && @search_results.length == 0 %>
+  <div class="alert alert-danger">No records were found matching "<%= params['search_term'] %>".</div>
+<% else %>
+  <div class="alert alert-danger">Please enter a search team.</div>
+<% end %>

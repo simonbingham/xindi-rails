@@ -1,0 +1,35 @@
+<% if @pages.count != 0 %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Published</th>
+        <th>Last Updated</th>
+        <th>Depth</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @pages.each do |page| %>
+        <tr>
+          <td style="text-indent:<%= page.depth > 1 ? ((page.depth - 1) * 15) + 10 : 0 %>px"><%= page.title %></td>
+          <td><%= format_date(page.created_at) %></td>
+          <td><%= format_date(page.updated_at) %></td>
+          <td><%= page.depth %></td>
+          <td><%= link_to_if page.can_move_up, 'Move Up', { controller: 'admin/pages', action: 'move', id: page.id, direction: 'up' } %></td>
+          <td><%= link_to_if page.can_move_down, 'Move Down', { controller: 'admin/pages', action: 'move', id: page.id, direction: 'down' } %></td>
+          <td><%= link_to_if page.can_add_page, 'Add Page', { controller: 'admin/pages', action: 'new', ancestor_id: page.id } %></td>
+          <td><%= link_to 'Edit', admin_pages_edit_path(page) %></td>
+          <td><%= link_to_if page.can_delete_page, 'Delete', admin_pages_destroy_path(page), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>There are currently no pages.</p>
+<% end %>

@@ -1,0 +1,15 @@
+<% if !@meta_data.nil? %>
+  <% if @meta_data.has_key?('meta_description'.to_sym) %>
+    <meta name="description" content="<%= @meta_data[:meta_description] %>">
+  <% end %>
+  <% if @meta_data.has_key?('meta_keywords'.to_sym) %>
+    <meta name="keywords" content="<%= @meta_data[:meta_keywords] %>">
+  <% end %>
+  <% if @meta_data.has_key?('meta_author'.to_sym) %>
+    <meta name="author" content="<%= @meta_data[:meta_author] %>">
+  <% end %>
+
+  <% if @meta_data.has_key?('meta_title'.to_sym) %>
+    <title><%= @meta_data[:meta_title] %></title>
+  <% end %>
+<% end %>

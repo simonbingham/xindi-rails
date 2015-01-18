@@ -1,0 +1,37 @@
+<h1><%= @page_title %></h1>
+
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, class: 'alert alert-' + name.to_s() %>
+<% end %>
+
+<%= form_for @enquiry, url: public_enquiries_create_path(@enquiry) do |f| %>
+  <% if @enquiry.errors.any? %>
+    <div class="alert alert-danger">
+      <p>Please amend the following <%= pluralize(@enquiry.errors.count, 'field') %>:</p>
+
+      <ul>
+        <% @enquiry.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, :class => 'form-control', :required => true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email_address %>
+    <%= f.text_field :email_address, :class => 'form-control', :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :message %>
+    <%= f.text_area :message, cols: 20, rows: 20, :class => 'form-control', :required => true %>
+  </div>
+
+  <%= submit_tag nil, :class => 'btn btn-default' %>
+<% end %>
+

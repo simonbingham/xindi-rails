@@ -1,0 +1,12 @@
+<p class="pull-right">
+  <%= link_to admin_enquiries_destroy_path(@enquiry), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' do %>
+    Delete <i class="glyphicon glyphicon-trash glyphicon-white"></i>
+  <% end %>
+</p>
+
+<p><%= mail_to @enquiry.email_address %></p>
+<p><%= format_date(@enquiry.created_at) %></p>
+
+<hr>
+
+<%= @enquiry.message %>

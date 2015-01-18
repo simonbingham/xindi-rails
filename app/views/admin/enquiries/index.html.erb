@@ -1,0 +1,27 @@
+<% if @enquiries.count != 0 %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email Address</th>
+        <th>Received</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @enquiries.each do |enquiry| %>
+        <tr>
+          <td><%= enquiry.name %></td>
+          <td><%= mail_to enquiry.email_address %></td>
+          <td><%= format_date(enquiry.created_at) %></td>
+          <td><%= link_to 'Show Message', admin_enquiries_show_path(enquiry) %></td>
+          <td><%= link_to 'Delete', admin_enquiries_destroy_path(enquiry), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>There are currently no enquiries.</p>
+<% end %>

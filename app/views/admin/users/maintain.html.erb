@@ -1,0 +1,31 @@
+<%= form_for @user, url: {action: @action} do |f| %>
+  <% if @user.errors.any? %>
+    <div class="alert alert-danger">
+      <p>Please amend the following <%= pluralize(@user.errors.count, 'field') %>:</p>
+
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :email_address %>
+    <%= f.text_field :email_address, :class => 'form-control', :maxlength => '100', :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.text_field :password, :class => 'form-control', :required => true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation, 'Confirm Password' %>
+    <%= f.text_field :password_confirmation, :class => 'form-control', :required => true %>
+  </div>
+
+  <%= f.submit nil, :class => 'btn btn-default' %>
+  <%= link_to 'Cancel', admin_users_path, class: 'btn cancel' %>
+<% end %>

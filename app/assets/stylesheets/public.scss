@@ -1,0 +1,52 @@
+// vendor
+
+@import
+  "bootstrap-sprockets",
+  "bootstrap";
+
+// vars
+
+$spacing-image: 30px;
+$spacing-vertical: 20px;
+
+// base
+
+body {
+  padding-top: 50px;
+  position: relative;
+}
+
+.dev-env {
+  bottom: 10px;
+  position: fixed;
+  right: 10px;
+  z-index: 100;
+}
+
+// head
+
+.navbar-inverse {
+  background-color: #01324a;
+  border-color: #012638;
+
+  .navbar-nav > .active > a,
+  .navbar-nav > .active > a:hover,
+  .navbar-nav > .active > a:focus {
+    background-color: #011119;
+  }
+
+  .brand img {
+    margin-top:15px;
+  }
+}
+
+// main
+
+.main-content {
+  min-height: 400px;
+
+  .img-right {
+    float:right;
+    margin:$spacing-image 0 $spacing-image $spacing-image;
+  }
+}

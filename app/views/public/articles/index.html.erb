@@ -1,0 +1,21 @@
+<% content_for :head do %>
+  <%= auto_discovery_link_tag(:atom, public_articles_url(format: "atom")) %>
+<% end %>
+
+<h1><%= @page_title %></h1>
+
+<% if @articles.count != 0 %>
+  <% @articles.each do |article| %>
+    <div class="well">
+      <h2>
+        <small class="pull-right"><%= format_date(article.created_at) %></small>
+
+        <%= link_to article.title, article.get_url(public_articles_url) %>
+      </h2>
+
+      <%= truncate(strip_tags(article.content), length: 500) %>
+    </div>
+  <% end %>
+<% else %>
+  <p>There are currently no news stories.</p>
+<% end %>

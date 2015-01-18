@@ -1,0 +1,84 @@
+// vendor
+
+@import
+  "jquery-ui/sortable",
+  "bootstrap-sprockets",
+  "bootstrap";
+
+// vars
+
+$spacing-image: 30px;
+$spacing-vertical: 20px;
+
+// base
+
+body {
+  padding-top: 50px;
+  position: relative;
+}
+
+.dev-env {
+  bottom: 10px;
+  position: fixed;
+  right: 10px;
+  z-index: 100;
+}
+
+// head
+
+.navbar-inverse {
+  background-color: #01324a;
+  border-color: #012638;
+
+  .navbar-nav > .active > a,
+  .navbar-nav > .active > a:hover,
+  .navbar-nav > .active > a:focus {
+    background-color: #011119;
+  }
+
+  .brand img {
+    margin-top:15px;
+  }
+}
+
+// main
+
+.main-content {
+  min-height: 400px;
+
+  .wysihtml5-toolbar {
+    padding-left:0;
+
+    li {
+      display:inline;
+    }
+  }
+
+  #sortable {
+    padding-left:0;
+
+    li {
+      list-style-type: none;
+      background-color: #FFF;
+      line-height: $spacing-vertical;
+      border-top: 1px solid #DDD;
+      padding: 6px;
+      cursor: move;
+
+    }
+
+    li:nth-child(odd) {
+      background-color: #F9F9F9;
+    }
+  }
+}
+
+// foot
+
+.footer {
+  background: #F5F5F5;
+  border-top: solid 1px #e9e9e9;
+  margin-top: $spacing-vertical;
+  padding: 40px 0;
+  width: 100%;
+}

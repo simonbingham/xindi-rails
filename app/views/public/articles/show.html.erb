@@ -1,0 +1,16 @@
+<% content_for :head do %>
+  <meta name="description" content="<%= @article.meta_description %>">
+  <meta name="keywords" content="<%= @article.meta_keywords %>">
+  <meta name="author" content="<%= @article.author %>">
+
+  <title><%= @article.meta_title %></title>
+<% end %>
+
+<%= @article.content.html_safe %>
+
+<hr>
+
+<p>
+  Published: <%= @article.created_at %><br>
+  Author: <%= @article.author %>
+</p>

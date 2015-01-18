@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <%= render '/public/shared/meta_data' %>
+
+    <%= stylesheet_link_tag "public", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "public", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+
+    <%= yield :head %>
+  </head>
+
+  <body>
+    <% if Rails.env == "development" %>
+      <span class="dev-env label label-warning">Development Mode</span>
+    <% end %>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <%= link_to image_tag('/assets/images/public/xindi-logo.png', alt: 'Site logo'), root_path, class: 'brand' %>
+        </div>
+
+        <div id="navbar">
+          <%= get_navigation.html_safe %>
+
+          <%= form_tag(public_search_path, method: 'get', class: 'navbar-form navbar-right') do %>
+            <div class="form-group">
+              <%= text_field_tag(:search_term, nil, class: 'form-control', placeholder: 'Search') %>
+            </div>
+            <%= submit_tag('Search', class: 'btn btn-default') %>
+          <% end %>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container main-content">
+      <%= yield %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<p class="pull-right">
+  <%= link_to admin_users_new_path, class: 'btn btn-primary' do %>
+    Add User <i class="glyphicon glyphicon-plus glyphicon-white"></i>
+  <% end %>
+</p>
+
+<% if @users.count != 0 %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.email_address %></td>
+          <td><%= link_to 'Edit', admin_users_edit_path(user) %></td>
+          <td><%= link_to 'Delete', admin_users_destroy_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>There are currently no users.</p>
+<% end %>
