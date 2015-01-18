@@ -35,8 +35,10 @@ Xindi Rails uses the gems listed below.
 1. `git clone git@github.com:simonbingham/xindi-rails.git`
 2. `cd xindi-rails`
 3. `bundle install`
-4. `rails server`
-5. Browser to [http://localhost:3000/](http://localhost:3000/).
+4. `bin/rake db:migrate RAILS_ENV=development`
+5. `rake db:setup`
+6. `rails server`
+7. Browser to [http://localhost:3000/](http://localhost:3000/).
 
 ## License
 
