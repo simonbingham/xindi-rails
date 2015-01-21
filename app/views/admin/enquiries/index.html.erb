@@ -16,8 +16,16 @@
           <td><%= enquiry.name %></td>
           <td><%= mail_to enquiry.email_address %></td>
           <td><%= format_date(enquiry.created_at) %></td>
-          <td><%= link_to 'Show Message', admin_enquiries_show_path(enquiry) %></td>
-          <td><%= link_to 'Delete', admin_enquiries_destroy_path(enquiry), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td>
+            <%= link_to admin_enquiries_show_path(enquiry), title: 'Show Message' do %>
+              <i class="glyphicon glyphicon-eye-open"></i>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to admin_enquiries_destroy_path(enquiry), method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete' do %>
+              <i class="glyphicon glyphicon-remove"></i>
+            <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>

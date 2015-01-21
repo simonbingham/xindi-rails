@@ -24,14 +24,14 @@ describe Admin::EnquiriesController do
   end
 
   describe 'GET #show' do
-    subject { expect(get :show, id: '1') }
+    subject { expect(get :show, id: 1) }
     it { subject.to render_template(:show) }
     it { subject.to render_template(:layout => 'admin') }
     it { subject.to have_http_status(200) }
   end
 
   describe 'DELETE #destroy' do
-    subject { expect(delete :destroy, id: '1') }
+    subject { expect(delete :destroy, id: 1) }
     it { subject.to redirect_to(admin_enquiries_path) }
     it { subject.to have_http_status(302) }
   end

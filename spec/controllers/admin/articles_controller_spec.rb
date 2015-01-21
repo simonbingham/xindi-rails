@@ -35,7 +35,7 @@ describe Admin::ArticlesController do
   end
 
   describe 'GET #edit' do
-    subject { expect(get :edit, id: '1') }
+    subject { expect(get :edit, id: 1) }
     it { subject.to render_template(:maintain) }
     it { subject.to render_template(:layout => 'admin') }
     it { subject.to have_http_status(200) }
@@ -58,13 +58,13 @@ describe Admin::ArticlesController do
 
   describe 'POST #update' do
     context 'when valid attributes' do
-      subject { expect(put :update, id: '1', article: FactoryGirl.attributes_for(:article)) }
+      subject { expect(put :update, id: 1, article: FactoryGirl.attributes_for(:article)) }
       it { subject.to redirect_to(admin_articles_path) }
       it { subject.to have_http_status(302) }
     end
 
     context 'when invalid attributes' do
-      subject { expect(put :update, id: '1', article: FactoryGirl.attributes_for(:article, title: '')) }
+      subject { expect(put :update, id: 1, article: FactoryGirl.attributes_for(:article, title: '')) }
       it { subject.to render_template(:maintain) }
       it { subject.to render_template(:layout => 'admin') }
       it { subject.to have_http_status(200) }
@@ -72,7 +72,7 @@ describe Admin::ArticlesController do
   end
 
   describe 'DELETE #destroy' do
-    subject { expect(delete :destroy, id: '1') }
+    subject { expect(delete :destroy, id: 1) }
     it { subject.to redirect_to(admin_articles_path) }
     it { subject.to have_http_status(302) }
   end
