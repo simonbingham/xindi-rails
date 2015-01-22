@@ -21,11 +21,31 @@
           <td><%= format_date(page.created_at) %></td>
           <td><%= format_date(page.updated_at) %></td>
           <td><%= page.depth %></td>
-          <td><%= link_to_if page.can_move_up, 'Move Up', { controller: 'admin/pages', action: 'move', id: page.id, direction: 'up' } %></td>
-          <td><%= link_to_if page.can_move_down, 'Move Down', { controller: 'admin/pages', action: 'move', id: page.id, direction: 'down' } %></td>
-          <td><%= link_to_if page.can_add_page, 'Add Page', { controller: 'admin/pages', action: 'new', ancestor_id: page.id } %></td>
-          <td><%= link_to 'Edit', admin_pages_edit_path(page) %></td>
-          <td><%= link_to_if page.can_delete_page, 'Delete', admin_pages_destroy_path(page), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td>
+            <%= link_to_if page.can_move_up?, content_tag(:div, '', :class => "glyphicon glyphicon-chevron-up"), { controller: 'admin/pages', action: 'move', id: page.id, direction: 'up' }, title: 'Move Up' do %>
+              <i class="glyphicon glyphicon-chevron-up"></i>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to_if page.can_move_down?, content_tag(:div, '', :class => "glyphicon glyphicon-chevron-down"), { controller: 'admin/pages', action: 'move', id: page.id, direction: 'down' }, title: 'Move Down' do %>
+              <i class="glyphicon glyphicon-chevron-down"></i>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to_if page.can_add_page?, content_tag(:div, '', :class => "glyphicon glyphicon-plus"), { controller: 'admin/pages', action: 'new', ancestor_id: page.id }, title: 'Add Page' do %>
+              <i class="glyphicon glyphicon-plus"></i>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to admin_pages_edit_path(page), title: 'Edit' do %>
+              <i class="glyphicon glyphicon-pencil"></i>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to_if page.can_delete_page?, content_tag(:div, '', :class => "glyphicon glyphicon-remove"), admin_pages_destroy_path(page), method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete' do %>
+              <i class="glyphicon glyphicon-remove"></i>
+            <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>

@@ -5,7 +5,7 @@ class Article < ActiveRecord::Base
   validates :title, :content, :author, presence: true
   validates :title, uniqueness: true
 
-  before_create :set_slug
+  before_create :set_unique_slug
 
   def get_url(url)
     url << "/" << self.slug
@@ -13,7 +13,7 @@ class Article < ActiveRecord::Base
 
   private
 
-    def set_slug
+    def set_unique_slug
       slug = self.title.to_s.gsub(/[^0-9A-Za-z]/, '-').downcase
       while Article.where(slug: slug).count > 0 do
         slug << '-'

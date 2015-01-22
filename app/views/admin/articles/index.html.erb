@@ -22,8 +22,16 @@
           <td><%= article.title %></td>
           <td><%= format_date(article.created_at) %></td>
           <td><%= format_date(article.updated_at) %></td>
-          <td><%= link_to 'Edit', admin_articles_edit_path(article) %></td>
-          <td><%= link_to 'Delete', admin_articles_destroy_path(article), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td>
+            <%= link_to admin_articles_edit_path(article), title: 'Edit' do %>
+              <i class="glyphicon glyphicon-pencil"></i>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to admin_articles_destroy_path(article), method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete' do %>
+              <i class="glyphicon glyphicon-remove"></i>
+            <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>
