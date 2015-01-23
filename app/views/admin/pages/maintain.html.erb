@@ -43,7 +43,7 @@
     <%= f.text_field :meta_keywords, :class => 'form-control', :maxlength => '200' %>
   </div>
 
-  <%= f.submit nil, :class => 'btn btn-default' %>
+  <%= f.submit 'Save Page', :class => 'btn btn-default' %>
   <%= link_to 'Cancel', admin_pages_path, class: 'btn cancel' %>
 
   <%= f.hidden_field :ancestor_id %>

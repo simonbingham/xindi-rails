@@ -22,6 +22,7 @@ end
 group :development, :test do
   gem 'rspec-rails' # https://github.com/rspec/rspec-rails
   gem 'factory_girl_rails' # https://github.com/thoughtbot/factory_girl
+  gem 'capybara' # https://github.com/jnicklas/capybara
 end
 
 group :test do

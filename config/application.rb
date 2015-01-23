@@ -21,7 +21,7 @@ module XindiRails
     # config.i18n.default_locale = :de
     config.i18n.enforce_available_locales = false
 
-    config.xindi = { :version => '2015.1.21' }
+    config.xindi = { :version => '2015.1.23' }
     config.site = { :name => 'Xindi Rails' }
     config.articles = { :rss_feed_title => 'the rss feed title' }
     config.enquiries = {
