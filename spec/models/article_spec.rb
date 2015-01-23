@@ -24,7 +24,7 @@ describe Article do
     end
 
     it 'should generate meta title when `meta_generated` is true' do
-      expect(FactoryGirl.create(:article).meta_title).to eq('the title | ' + Rails.configuration.site[:name])
+      expect(FactoryGirl.create(:article, meta_generated: true).meta_title).to eq('the title | ' + Rails.configuration.site[:name])
     end
 
     it 'should not generate meta title when `meta_generated` is false' do
@@ -33,7 +33,7 @@ describe Article do
     end
 
     it 'should generate meta description when `meta_generated` is true' do
-      expect(FactoryGirl.create(:article).meta_description).to eq('the content')
+      expect(FactoryGirl.create(:article, meta_generated: true).meta_description).to eq('the content')
     end
 
     it 'should not generate meta description when `meta_generated` is false' do
@@ -42,7 +42,7 @@ describe Article do
     end
 
     it 'should generate meta keywords when `meta_generated` is true' do
-      expect(FactoryGirl.create(:article).meta_keywords).to eq('content')
+      expect(FactoryGirl.create(:article, meta_generated: true).meta_keywords).to eq('content')
     end
 
     it 'should not generate meta keywords when `meta_generated` is false' do

@@ -22,7 +22,7 @@ module ApplicationHelper
         end
         result << '</li><li>' << link
       else
-        result << '</li>' << '<li>' << link
+        result << '</li><li>' << link
       end
       previous_level = current_level
     end

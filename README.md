@@ -14,6 +14,7 @@ Xindi Rails uses the gems listed below.
 
 * [Ruby on Rails] (https://github.com/rails/rails)
 * [bootstrap-sass] (https://github.com/twbs/bootstrap-sass)
+* [Capybara] (https://github.com/jnicklas/capybara)
 * [jquery-rails] (https://github.com/rails/jquery-rails)
 * [jquery-ui-rails] (https://github.com/joliss/jquery-ui-rails)
 * [Jbuilder] (https://github.com/rails/jbuilder)

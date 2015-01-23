@@ -3,7 +3,7 @@ class Public::SearchController < Public::BaseController
   def index
     @page_title = 'Search Results'
     @meta_data = {
-      :meta_title => @page_title,
+      :meta_title => @page_title << ' | ' << Rails.configuration.site[:name],
       :meta_description => '',
       :meta_keywords => ''
     }

@@ -8,7 +8,7 @@ class Public::ArticlesController < Public::BaseController
     respond_to do |format|
       format.html {
         @meta_data = {
-          :meta_title => @page_title,
+          :meta_title => @page_title << ' | ' << Rails.configuration.site[:name],
           :meta_description => '',
           :meta_keywords => ''
         }

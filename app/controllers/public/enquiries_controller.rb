@@ -5,7 +5,7 @@ class Public::EnquiriesController < Public::BaseController
     @page_title = 'Contact Us'
     @enquiry = Enquiry.new
     @meta_data = {
-      :meta_title => @page_title,
+      :meta_title => @page_title << ' | ' << Rails.configuration.site[:name],
       :meta_description => '',
       :meta_keywords => ''
     }
