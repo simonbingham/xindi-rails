@@ -19,7 +19,7 @@ describe Public::EnquiriesController do
 
   describe 'POST #create' do
     context 'when valid attributes' do
-      subject { expect(post :create, enquiry: FactoryGirl.attributes_for(:enquiry, name: 'the name', email_address: 'test@getxindi.com', message: 'the message')) }
+      subject { expect(post :create, enquiry: FactoryGirl.attributes_for(:enquiry, name: 'the name', email_address: 'test@example.com', message: 'the message')) }
       it { subject.to redirect_to(public_enquiries_path) }
       it { subject.to have_http_status(302) }
     end

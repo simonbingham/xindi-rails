@@ -20,7 +20,7 @@ describe Admin::SessionsController do
 
   describe 'POST #create' do
     context 'when valid attributes' do
-      subject { expect(post :create, email_address: 'factory@getxindi.com', password: 'password') }
+      subject { expect(post :create, email_address: 'factory@example.com', password: 'password') }
       it { subject.to redirect_to(admin_dashboard_path) }
     end
 

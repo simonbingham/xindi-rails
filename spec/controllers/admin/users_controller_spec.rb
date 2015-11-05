@@ -42,7 +42,7 @@ describe Admin::UsersController do
 
   describe 'POST #create' do
     context 'when valid attributes' do
-      subject { expect(post :create, user: FactoryGirl.attributes_for(:user, email_address: 'test@getxindi.com', password: 'password', password_confirmation: 'password')) }
+      subject { expect(post :create, user: FactoryGirl.attributes_for(:user, email_address: 'test@example.com', password: 'password', password_confirmation: 'password')) }
       it { subject.to redirect_to(admin_users_path) }
       it { subject.to have_http_status(302) }
     end

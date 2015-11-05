@@ -25,8 +25,8 @@ module XindiRails
     config.site = { :name => 'Xindi Rails' }
     config.articles = { :rss_feed_title => 'the rss feed title' }
     config.enquiries = {
-      :to => 'admin@getxindi.com',
-      :from => 'no-reply@getxindi.com',
+      :to => 'admin@example.com',
+      :from => 'no-reply@example.com',
       :subject => 'Website Enquiry'
     }
   end

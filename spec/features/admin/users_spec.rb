@@ -4,7 +4,7 @@ feature 'user manager' do
   before(:each) do
     FactoryGirl.create(:user)
     visit admin_login_path
-    fill_in('email_address', :with => 'factory@getxindi.com')
+    fill_in('email_address', :with => 'factory@example.com')
     fill_in('password', :with => 'password')
     click_button('Login')
   end
@@ -18,7 +18,7 @@ feature 'user manager' do
     it 'adds user with valid attributes' do
       visit admin_users_path
       click_link('Add User')
-      fill_in('user_email_address', :with => 'test@getxindi.com')
+      fill_in('user_email_address', :with => 'test@example.com')
       fill_in('user_password', :with => 'the password')
       fill_in('user_password_confirmation', :with => 'the password')
       click_button('Save User')
@@ -44,7 +44,7 @@ feature 'user manager' do
 
   context 'when deleting a user' do
     it 'deletes user when more than one remains' do
-      FactoryGirl.create(:user, email_address: 'delete@getxindi.com')
+      FactoryGirl.create(:user, email_address: 'delete@example.com')
       visit admin_users_path
       click_link('Delete', :match => :first)
       expect(page).to have_content "The user was successfully deleted."

@@ -1,4 +1,4 @@
-# [Xindi Rails] (http://www.getxindi.com/)
+# Xindi Rails
 
 ## Introduction
 

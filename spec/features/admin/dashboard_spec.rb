@@ -4,7 +4,7 @@ feature 'dashboard' do
   it 'displays dashboard' do
     FactoryGirl.create(:user)
     visit admin_login_path
-    fill_in('email_address', :with => 'factory@getxindi.com')
+    fill_in('email_address', :with => 'factory@example.com')
     fill_in('password', :with => 'password')
     click_button('Login')
     expect(page).to have_content 'Dashboard'

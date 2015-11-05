@@ -4,7 +4,7 @@ feature 'enquiry manager' do
   before(:each) do
     FactoryGirl.create(:user)
     visit admin_login_path
-    fill_in('email_address', :with => 'factory@getxindi.com')
+    fill_in('email_address', :with => 'factory@example.com')
     fill_in('password', :with => 'password')
     click_button('Login')
   end
@@ -19,7 +19,7 @@ feature 'enquiry manager' do
     visit admin_enquiries_path
     click_link('Show Message')
     expect(page).to have_content 'the name'
-    expect(page).to have_content 'factory@getxindi.com'
+    expect(page).to have_content 'factory@example.com'
     expect(page).to have_content 'the message'
   end
 

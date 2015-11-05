@@ -16,7 +16,7 @@ describe User do
 
     it 'should fail validation when email address is not unique' do
       FactoryGirl.create(:user)
-      expect(FactoryGirl.build(:user, email_address: 'factory@getxindi.com')).to_not be_valid
+      expect(FactoryGirl.build(:user, email_address: 'factory@example.com')).to_not be_valid
     end
 
     it 'should fail validation when password does not match password confirmation' do

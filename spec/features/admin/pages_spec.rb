@@ -20,7 +20,7 @@ feature 'page manager' do
     FactoryGirl.create(:page)
     FactoryGirl.create(:user)
     visit admin_login_path
-    fill_in('email_address', :with => 'factory@getxindi.com')
+    fill_in('email_address', :with => 'factory@example.com')
     fill_in('password', :with => 'password')
     click_button('Login')
   end
