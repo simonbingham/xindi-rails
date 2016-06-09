@@ -61,4 +61,4 @@ If you experience any problems with Xindi Rails please:
 
 ## Social Media
 
-You'll find Xindi Rails on [Twitter] (https://twitter.com/#!/getxindi), [Facebook] (http://www.facebook.com/getxindi) and [Google+] (https://plus.google.com/112798469896267857099).
+You'll find Xindi Rails on [Twitter] (https://twitter.com/#!/getxindi).
