@@ -55,10 +55,5 @@ Xindi Rails is authored by [Simon Bingham] (https://twitter.com/#!/simonbingham)
 
 If you experience any problems with Xindi Rails please:
 
-* [visit the Google Group for help and advice] (https://groups.google.com/forum/#!forum/xindi-cms-rails)
 * [submit a ticket to the issue tracker] (https://github.com/simonbingham/xindi-rails/issues)
 * fix the error yourself and submit a pull request
-
-## Social Media
-
-You'll find Xindi Rails on [Twitter] (https://twitter.com/#!/getxindi).
