@@ -12,20 +12,20 @@ Open source, free and flexible, Xindi Rails is a great choice for your next web 
 
 Xindi Rails uses the gems listed below.
 
-* [Ruby on Rails] (https://github.com/rails/rails)
-* [bootstrap-sass] (https://github.com/twbs/bootstrap-sass)
-* [Capybara] (https://github.com/jnicklas/capybara)
-* [jquery-rails] (https://github.com/rails/jquery-rails)
-* [jquery-ui-rails] (https://github.com/joliss/jquery-ui-rails)
-* [Jbuilder] (https://github.com/rails/jbuilder)
-* [bcrypt-ruby] (https://github.com/codahale/bcrypt-ruby)
-* [Autoprefixer] (https://github.com/ai/autoprefixer-rails)
-* [Sanitize] (https://github.com/rgrove/sanitize/)
-* [Bootsy] (https://github.com/volmer/bootsy)
-* [SDoc] (https://github.com/voloko/sdoc)
-* [rspec-rails] (https://github.com/rspec/rspec-rails)
-* [factory_girl] (https://github.com/thoughtbot/factory_girl)
-* [database_cleaner] (https://github.com/DatabaseCleaner/database_cleaner)
+* [Ruby on Rails](https://github.com/rails/rails)
+* [bootstrap-sass](https://github.com/twbs/bootstrap-sass)
+* [Capybara](https://github.com/jnicklas/capybara)
+* [jquery-rails](https://github.com/rails/jquery-rails)
+* [jquery-ui-rails](https://github.com/joliss/jquery-ui-rails)
+* [Jbuilder](https://github.com/rails/jbuilder)
+* [bcrypt-ruby](https://github.com/codahale/bcrypt-ruby)
+* [Autoprefixer](https://github.com/ai/autoprefixer-rails)
+* [Sanitize](https://github.com/rgrove/sanitize/)
+* [Bootsy](https://github.com/volmer/bootsy)
+* [SDoc](https://github.com/voloko/sdoc)
+* [rspec-rails](https://github.com/rspec/rspec-rails)
+* [factory_girl](https://github.com/thoughtbot/factory_girl)
+* [database_cleaner](https://github.com/DatabaseCleaner/database_cleaner)
 
 ## Minimum Requirements
 
@@ -43,17 +43,17 @@ Xindi Rails uses the gems listed below.
 
 ## License
 
-Xindi Rails is licensed under the [MIT License (MIT)] (http://www.opensource.org/licenses/mit-license.php).
+Xindi Rails is licensed under the [MIT License (MIT)](http://www.opensource.org/licenses/mit-license.php).
 
 However, the gems listed above have their own licenses which you should review before using Xindi Rails.
 
 ## Contributors
 
-Xindi Rails is authored by [Simon Bingham] (https://twitter.com/#!/simonbingham).
+Xindi Rails is authored by [Simon Bingham](https://twitter.com/#!/simonbingham).
 
 ## Problems
 
 If you experience any problems with Xindi Rails please:
 
-* [submit a ticket to the issue tracker] (https://github.com/simonbingham/xindi-rails/issues)
+* [submit a ticket to the issue tracker](https://github.com/simonbingham/xindi-rails/issues)
 * fix the error yourself and submit a pull request
